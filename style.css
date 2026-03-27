@@ -370,6 +370,22 @@
 
 }
 
+@media (max-width: 768px) {
+
+  .home-page .hero {
+    flex-direction: column; /* stack */
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* 👈 controls spacing between text & image */
+  }
+
+  .home-page .hero-image img {
+    margin-top: -50; /* 👈 REMOVE desktop margin */
+    width: 80%;
+    max-width: 300px;
+  }
+
+}
 
 
 
@@ -1435,22 +1451,7 @@
   }
 
 }
-@media (max-width: 768px) {
 
-  .home-page .hero {
-    flex-direction: column; /* stack */
-    align-items: center;
-    text-align: center;
-    gap: 20px; /* 👈 controls spacing between text & image */
-  }
-
-  .home-page .hero-image img {
-    margin: 0; /* 👈 REMOVE desktop margin */
-    width: 80%;
-    max-width: 300px;
-  }
-
-}
 
 
 

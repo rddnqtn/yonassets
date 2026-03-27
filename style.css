@@ -2459,81 +2459,84 @@
 }
 
    /* ===== DESKTOP LARGE ===== */
+/* ===== DESKTOP LARGE ===== */
 @media (min-width: 1400px) {
-    .animated-page .gallery {
-        max-width: 1100px;
-    }
 
-    .animated-page .gallery img {
-        width: 110px;
-        height: 110px;
-    }
+  .animated-page .gallery {
+    max-width: 1100px;
+  }
+
+  .animated-page .gallery img {
+    width: 110px;
+    height: 110px;
+  }
+
 }
 
-  @media (max-width: 768px) {
 
-        .animated-page .static-layout {
-            flex-direction: column; /* stack vertically */
-        }
+/* ===== TABLET & MOBILE ===== */
+@media (max-width: 768px) {
 
-        .animated-page .gallery-section {
-            width: 100%;
-        }
+  /* NAV */
+  .animated-page .nav-wrapper {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 20px;
+  }
 
-        .animated-page .side-panel {
-            position: relative; /* ❗ remove sticky on mobile */
-            top: 0;
+  .animated-page .nav-link {
+    font-size: 14px;
+    text-align: center;
+  }
 
-            width: 100%;
-            max-width: 100%;
+  .animated-page .nav-link:not(:last-child)::after {
+    content: none;
+  }
 
-            height: auto; /* no square on mobile */
-            margin: 20px 0;
+  /* LAYOUT */
+  .animated-page .static-layout {
+    flex-direction: column;
+  }
 
-            border-radius: 15px;
-        }
+  .animated-page .gallery-section {
+    width: 100%;
+  }
 
-        .animated-page .tos-box {
-            max-height: 300px; /* still scrollable */
-        }
-    }
-    @media (max-width: 768px) {
+  .animated-page .side-panel {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+  }
 
-        .animated-page .gallery {
-            grid-template-columns: repeat(3, 1fr); /* 3 per row */
-            gap: 10px;
-        }
+  .animated-page .tos-box {
+    max-height: 300px;
+  }
 
-        .animated-page.gallery img {
-            width: 100%;
-            height: auto;
-        }
-    }
-    @media (max-width: 768px) {
+  /* ✅ FIXED GALLERY */
+  .animated-page .gallery {
+    display: grid; /* 🔥 IMPORTANT */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 0 16px;
+  }
 
-        .animated-page .site-header {
-            text-align: center;
-            padding: 10px;
-        }
+  .animated-page .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
 
-        .animated-page .logo a {
-            font-size: 1.2rem;
-        }
-
-        .animated-page .main-nav {
-            text-align: center;
-        }
-
-    }
-
-
-        @media (max-width: 768px) {
-
+  /* CONTACT ICONS */
   .animated-page .contact-box {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* 🔥 THIS FIXES YOUR ISSUE */
+    flex-wrap: wrap;
   }
 
   .animated-page .contact-box img {
@@ -2541,39 +2544,25 @@
     height: 55px;
   }
 
-}
-
-@media (max-width: 768px) {
-
-  .animated-page .nav-wrapper {
-    flex-direction: column;   /* stack items */
-    gap: 8px;                 /* tighter spacing */
-    padding: 12px 18px;       /* smaller box */
-    border-radius: 20px;      /* less pill-shaped */
-  }
-
-  .animated-page .nav-link {
-    font-size: 14px;          /* smaller text */
-    text-align: center;
-  }
-
-  /* REMOVE the "|" divider on mobile */
-   .animated-page .nav-link:not(:last-child)::after {
-    content: none; /* 🔥 force remove */
-  }
-
-
-}
-
-@media (max-width: 768px) {
-
+  /* FLOATING NOTE FIX */
   .animated-page .floating-note {
-    position: static !important;   /* 🔥 stop absolute */
+    position: static !important;
     top: auto;
     right: auto;
-
     width: 100%;
-    margin-top: 15px;              /* space below DETAILS */
+    margin-top: 15px;
   }
 
-}       
+}
+
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 480px) {
+
+  .animated-page .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+}

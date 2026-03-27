@@ -2558,7 +2558,7 @@
   }
 
   /* REMOVE the "|" divider on mobile */
-   .static-page .nav-link:not(:last-child)::after {
+   .animated-page .nav-link:not(:last-child)::after {
     content: none; /* 🔥 force remove */
   }
 

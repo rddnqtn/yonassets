@@ -2497,16 +2497,24 @@
     }
 
     /* ✅ FIXED GALLERY (NO CONFLICTS) */
-    .animated-page .gallery {
-        grid-template-columns: repeat(3, 1fr); /* 👈 FIX */
-        gap: 15px;
-        padding: 20px;
-    }
 
-    .animated-page .gallery img {
-        width: 100%;
-        height: auto;
-    }
+
+  .animated-page .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+
+    /* 👇 THIS is the correct spacing fix */
+    padding: 0 16px;
+  }
+
+  .animated-page .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+}
 
     /* HEADER */
     .animated-page .site-header {

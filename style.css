@@ -2477,16 +2477,26 @@
 /* ===== TABLET & MOBILE ===== */
 @media (max-width: 768px) {
 
-  /* NAV */
+  /* ===== HEADER FIX (ONLY SIZE, NOT LAYOUT) ===== */
+  .animated-page .site-header {
+    padding: 10px 0;
+  }
+
+  .animated-page .logo a {
+    font-size: 1.4rem;
+    padding: 8px 16px;
+  }
+
+  /* NAV (keep clean, not oversized) */
   .animated-page .nav-wrapper {
     flex-direction: column;
-    gap: 8px;
-    padding: 12px 18px;
-    border-radius: 20px;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 18px;
   }
 
   .animated-page .nav-link {
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
   }
 
@@ -2494,8 +2504,9 @@
     content: none;
   }
 
-  /* LAYOUT */
+  /* ===== LAYOUT (SAFE STACK, NO HEADER BREAK) ===== */
   .animated-page .static-layout {
+    display: flex;
     flex-direction: column;
   }
 
@@ -2505,64 +2516,47 @@
 
   .animated-page .side-panel {
     position: relative;
-    top: 0;
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin: 20px 0;
+    margin: 15px 0;
     border-radius: 15px;
   }
 
-  .animated-page .tos-box {
-    max-height: 300px;
-  }
-
-  /* ✅ FIXED GALLERY */
+  /* ===== GALLERY (REAL FIX) ===== */
   .animated-page .gallery {
-    display: grid; /* 🔥 IMPORTANT */
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 12px;
     padding: 0 16px;
+    max-width: 100%;
   }
 
   .animated-page .gallery img {
     width: 100%;
+    height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
 
-  /* CONTACT ICONS */
+  /* ===== CONTACT ICONS ===== */
   .animated-page .contact-box {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
   .animated-page .contact-box img {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
 
-  /* FLOATING NOTE FIX */
+  /* ===== FLOATING NOTE FIX ===== */
   .animated-page .floating-note {
     position: static !important;
-    top: auto;
-    right: auto;
     width: 100%;
-    margin-top: 15px;
-  }
-
-}
-
-
-/* ===== SMALL PHONES ===== */
-@media (max-width: 480px) {
-
-  .animated-page .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    padding: 0 16px;
+    margin-top: 12px;
   }
 
 }

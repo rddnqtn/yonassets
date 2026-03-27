@@ -2526,24 +2526,22 @@
 /* ===== SMALL PHONES ===== */
 @media (max-width: 480px) {
 
-    .animated-page .gallery {
-        grid-template-columns: repeat(3, 1fr); /* 👈 FIX */
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .animated-page .gallery img {
-        width: 100%;
-        height: auto;
-    }
-    
-     .animated-page .gallery {
+  .animated-page .gallery {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding: 10px;
-  }
-}
+    gap: 14px;
 
+    /* 👇 THIS is the correct spacing fix */
+    padding: 0 16px;
+  }
+
+  .animated-page .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+}
 @media (max-width: 768px) {
 
   .animated-page .floating-note {

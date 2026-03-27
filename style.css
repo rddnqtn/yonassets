@@ -380,7 +380,7 @@
   }
 
   .home-page .hero-image img {
-    margin-top: -50; /* 👈 REMOVE desktop margin */
+    margin-top: 100px;
     width: 80%;
     max-width: 300px;
   }
